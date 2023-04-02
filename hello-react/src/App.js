@@ -1,5 +1,4 @@
 import TaskCard from './TaskCard';
-import { BsPlus } from 'react-icons/bs';
 
 function App() {
   return (
@@ -25,8 +24,7 @@ function App() {
             assigneeName="Rohit M"
           />
           <button className="flex font-semibold bg-gray-300 text-gray-600 w-full pl-5 rounded">
-            <BsPlus size="32" />
-            New task
+            <span className='text-xl font-bold'>+</span> &nbsp; New task
           </button>
         </div>
         <div className="p-8 border-solid border-gray-900 border-2 rounded-2xl w-2/5">
