@@ -1,23 +1,50 @@
-import logo from './logo.svg';
-import './App.css';
+import TaskCard from './TaskCard';
+import { BsPlus } from 'react-icons/bs';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className="container mx-auto m-10 p-10 -mt-8 leading-8">
+      <h1 className="text-2xl font-bold">Smarter Tasks</h1>
+      <p>
+        <span className="font-bold">Project:</span> Graduation Final Year
+        Project (Revamp College Website)
+      </p>
+      <div className="flex justify-between mt-10 gap-10">
+        <div className="p-8 border-solid border-gray-900 border-2 rounded-2xl w-2/5">
+          <h1 className="text-xl font-bold text-gray-600 text-center text-3xl">
+            Pending
+          </h1>
+          <TaskCard
+            title="Build the website with static content"
+            dueDate="10th April"
+            assigneeName="Rohit M"
+          />
+          <TaskCard
+            title="Add a blog"
+            dueDate="22nd March"
+            assigneeName="Rohit M"
+          />
+          <button className="flex font-semibold bg-gray-300 text-gray-600 w-full pl-5 rounded">
+            <BsPlus size="32" />
+            New task
+          </button>
+        </div>
+        <div className="p-8 border-solid border-gray-900 border-2 rounded-2xl w-2/5">
+          <h1 className="text-xl font-bold text-gray-600 text-center text-3xl">
+            Done
+          </h1>
+          <TaskCard
+            title="Design the mockup"
+            completedAtDate="10th April"
+            assigneeName="Rohit M"
+          />
+          <TaskCard
+            title="Get the approval from principal"
+            completedAtDate="20th April"
+            assigneeName="Ajay S"
+          />
+        </div>
+      </div>
     </div>
   );
 }
