@@ -1,3 +1,4 @@
+import React from 'react';
 import TaskCard from './TaskCard';
 
 function App() {
@@ -16,15 +17,17 @@ function App() {
           <TaskCard
             title="Build the website with static content"
             dueDate="10th April"
+            completedAtDate=""
             assigneeName="Rohit M"
           />
           <TaskCard
             title="Add a blog"
             dueDate="22nd March"
+            completedAtDate=""
             assigneeName="Rohit M"
           />
           <button className="flex font-semibold bg-gray-300 text-gray-600 w-full pl-5 rounded">
-            <span className='text-xl font-bold'>+</span> &nbsp; New task
+            <span className="text-xl font-bold">+</span> &nbsp; New task
           </button>
         </div>
         <div className="p-8 border-solid border-gray-900 border-2 rounded-2xl w-2/5">
@@ -33,11 +36,13 @@ function App() {
           </h1>
           <TaskCard
             title="Design the mockup"
+            dueDate=""
             completedAtDate="10th April"
             assigneeName="Rohit M"
           />
           <TaskCard
             title="Get the approval from principal"
+            dueDate=""
             completedAtDate="20th April"
             assigneeName="Ajay S"
           />

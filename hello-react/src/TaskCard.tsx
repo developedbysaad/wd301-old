@@ -1,7 +1,14 @@
+import React from 'react';
 import './TaskCard.css';
 
-const TaskCard = (props) => {
-  console.log(props);
+interface UserInput {
+  title: string;
+  dueDate: string;
+  completedAtDate: string;
+  assigneeName: string;
+}
+
+const TaskCard = (props: UserInput) => {
   return (
     <div className="m-5 p-3 rounded-lg border-solid border-black border-2">
       <h2 className="text-xl font-bold text-black text-left text-2xl">
@@ -11,7 +18,7 @@ const TaskCard = (props) => {
         {props.dueDate ? `Due on: ${props.dueDate}` : ''}
       </p>
       <p className="font-semibold text-gray-600">
-        {props.completedAtDate ? `Completed on: ${props.completedAtDate}` : ''}{' '}
+        {props.completedAtDate ? `Completed on: ${props.completedAtDate}` : ''}
       </p>
       <p className="font-semibold text-gray-600">
         Assignee: {props.assigneeName}
