@@ -13,7 +13,6 @@ class Task extends React.Component<TaskProp> {
         <h2>{this.props.title}</h2>
         <p>{this.props.description}</p>
         <h3>{this.props.dueDate.toLocaleDateString()}</h3>
-        <hr />
       </div>
     );
   }
