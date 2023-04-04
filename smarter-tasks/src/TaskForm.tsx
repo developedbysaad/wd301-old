@@ -48,6 +48,7 @@ class TaskForm extends React.Component<TaskFormProps, TaskFormState> {
       <form onSubmit={this.addTask}>
         <input
           type="text"
+          id='todoTitle'
           value={this.state.title}
           onChange={this.titleChanged}
           required
