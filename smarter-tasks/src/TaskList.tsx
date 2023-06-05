@@ -25,6 +25,7 @@ const TaskList = (props: Props) => {
   const list = props.tasks.map((task, idx) => (
     <li className="flex justify-center gap-2">
       <Task
+        id={task.id}
         key={idx}
         title={task.title}
         description={task.description}

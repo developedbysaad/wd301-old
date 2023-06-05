@@ -4,13 +4,16 @@ interface TaskFormProps {
   addTask: (task: TaskItem) => void;
 }
 interface TaskFormState {
+  id: string;
   title: string;
   description: string;
   dueDate: string;
 }
 
 const TaskForm = (props: TaskFormProps) => {
+  const id = Date.now().toString();
   const [formState, setFormState] = React.useState<TaskFormState>({
+    id: id,
     title: "",
     description: "",
     dueDate: "",
@@ -41,12 +44,12 @@ const TaskForm = (props: TaskFormProps) => {
       return;
     }
     props.addTask(formState);
-    setFormState({ title: "", description: "", dueDate: "" });
+    setFormState({ id: id, title: "", description: "", dueDate: "" });
   };
 
   return (
     <form onSubmit={addTask}>
-      <div className="grid md:grid-cols-4 md:gap-3">
+      <div className="grid md:grid-cols-4 md:gap-3 ml-5">
         <div className="relative z-0 w-full mb-6 group">
           <input
             id="todoTitle"
