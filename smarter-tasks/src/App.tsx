@@ -1,4 +1,4 @@
-import { Routes, Route, useLocation } from "react-router-dom";
+import { Routes, Route, useLocation, Navigate } from "react-router-dom";
 import "./App.css";
 import HomePage from "./HomePage";
 import TaskApp from "./TaskApp";
@@ -27,7 +27,7 @@ function App() {
         />
         <Route path="/signin" element={<Signin />} />
         <Route path="/notfound" element={<NotFound />} />
-        <Route path="/*" element={<NotFound />} />
+        <Route path="/*" element={<Navigate to="/notfound" />} />
       </Routes>
     </div>
   );
