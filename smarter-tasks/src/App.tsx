@@ -16,7 +16,7 @@ function App() {
         <Header />
       )}
       <Routes>
-        <Route path="/" element={<HomePage />} />
+        <Route path="/" element={<ProtectedRoute element={<HomePage />} />} />
         <Route
           path="/tasks"
           element={<ProtectedRoute element={<TaskApp />} />}
