@@ -1,22 +1,14 @@
-import React from 'react';
-import './TaskCard.css';
-interface TaskProp {
-  title: string;
-  description: string;
-  dueDate: Date;
-}
+import "./TaskCard.css";
+import { TaskItem } from "./types";
 
-class Task extends React.Component<TaskProp> {
-  render() {
-    return (
-      <div className="TaskItem shadow-md border border-slate-100">
-        <h2>{this.props.title}</h2>
-        <p>{this.props.description}</p>
-        <h3>{this.props.dueDate.toLocaleDateString()}</h3>
-        <hr />
-      </div>
-    );
-  }
-}
+const Task = (props: TaskItem) => {
+  return (
+    <li className="TaskItem shadow-md border border-slate-100">
+      <h2 className="text-base text-red-500 font-bold my-1">{props.title}</h2>
+      <p className="text-sm text-slate-500">{props.dueDate.slice(0, 10)}</p>
+      <p className="text-sm text-slate-500">Description: {props.description}</p>
+    </li>
+  );
+};
 
 export default Task;
