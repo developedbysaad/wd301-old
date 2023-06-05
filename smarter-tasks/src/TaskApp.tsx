@@ -21,7 +21,7 @@ const TaskApp = (props: TaskAppProp) => {
   return (
     <div>
       <TaskForm addTask={addTask} />
-      <TaskList tasks={taskAppState.tasks} />
+      <TaskList tasks={taskAppState.tasks} setTask={setTaskAppState} />
     </div>
   );
 };
