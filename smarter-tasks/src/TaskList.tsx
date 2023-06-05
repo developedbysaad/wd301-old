@@ -1,12 +1,6 @@
 import React from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { library } from "@fortawesome/fontawesome-svg-core";
-import { fas } from "@fortawesome/free-solid-svg-icons";
 import Task from "./Task";
 import { TaskItem } from "./types";
-
-// Register all solid icons
-library.add(fas);
 
 interface TaskAppState {
   tasks: TaskItem[];
@@ -17,7 +11,7 @@ interface Props {
 }
 
 const TaskList = (props: Props) => {
-  const func = (idx: number) => {
+  const deleteTask = (idx: number) => {
     const updatedTasks = props.tasks.filter((task, id) => {
       return id !== idx;
     });
@@ -37,13 +31,12 @@ const TaskList = (props: Props) => {
         dueDate={task.dueDate}
       />
       <button
-        id="deleteTaskButton"
         className="deleteTaskButton text-white bg-red-400 hover:cursor-pointer py-0 px-5 rounded-xl my-3"
         onClick={() => {
-          func(idx);
+          deleteTask(idx);
         }}
       >
-        <FontAwesomeIcon icon="trash" />
+        Trash
       </button>
     </li>
   ));
