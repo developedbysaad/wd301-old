@@ -7,6 +7,8 @@ import Header from "./Header";
 import Signin from "./Signin";
 import { ProtectedRoute } from "./ProtectedRoute";
 import NotFound from "./NotFound";
+import ReactPlayground from "./ReactPlayground";
+import Form from "./Form";
 
 function App() {
   const location = useLocation();
@@ -15,6 +17,8 @@ function App() {
       {location.pathname !== "/signin" && location.pathname !== "/notfound" && (
         <Header />
       )}
+      <Form />
+      <ReactPlayground />
       <Routes>
         <Route path="/" element={<ProtectedRoute element={<HomePage />} />} />
         <Route
