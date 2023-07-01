@@ -16,8 +16,29 @@ const Form: React.FC = () => {
     });
   };
 
+  const handleSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
+    event.preventDefault();
+
+    try {
+      const response = await fetch(
+        "https://jsonplaceholder.typicode.com/posts",
+        {
+          method: "POST",
+          body: JSON.stringify(formData),
+          headers: {
+            "Content-Type": "application/json",
+          },
+        }
+      );
+      const json = await response.json();
+      console.log(json);
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <label htmlFor="name">Name:</label>
       <input
         type="text"
