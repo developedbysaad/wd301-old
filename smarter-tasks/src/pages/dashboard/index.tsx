@@ -1,8 +1,9 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const Dashboard: React.FC = () => {
   const userData = localStorage.getItem("userData");
+  const navigate = useNavigate();
   let user;
   if (userData) {
     user = JSON.parse(userData);
@@ -11,6 +12,7 @@ const Dashboard: React.FC = () => {
   const handleLogout = () => {
     localStorage.removeItem("userData");
     localStorage.removeItem("authToken");
+    navigate("/signin");
   };
   return (
     <div className="min-h-screen  bg-gray-100 p-5">
@@ -18,18 +20,15 @@ const Dashboard: React.FC = () => {
         <h1 className="text-3xl font-bold text-center text-gray-800 mb-8">
           Dashboard
         </h1>
-        <Link to="/signin" id="logout-link">
-          <button
-            type="submit"
-            id="logout"
-            onClick={handleLogout}
-            className="mb-5 p-2 pb-3 bg-gray-700 hover:bg-red-400 rounded-2xl text-white font-semibold text-xl"
-          >
-            Logout
-          </button>
-        </Link>
+        <button
+          id="logout-link"
+          onClick={handleLogout}
+          className="mb-5 p-2 pb-3 bg-gray-700 hover:bg-red-400 rounded-2xl text-white font-semibold text-xl"
+        >
+          Logout
+        </button>
       </div>
-      <h2 className="p-5 font-semibold text-2xl text-center">{user.name}</h2>
+      <p className="p-5 font-semibold text-2xl text-center">{user.name}</p>
       <p className="p-5 font-semibold text-xl text-center"> {user.email}</p>
     </div>
   );
