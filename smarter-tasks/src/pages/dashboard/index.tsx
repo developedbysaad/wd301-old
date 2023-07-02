@@ -28,9 +28,7 @@ const Dashboard: React.FC = () => {
           Logout
         </button>
       </div>
-      <h2 className="p-5 font-semibold text-2xl text-center">
-        Hello! {user.name}{" "}
-      </h2>
+      <h2 className="p-5 font-semibold text-2xl text-center">{user.name}</h2>
       <p className="p-5 font-semibold text-xl text-center"> {user.email}</p>
     </div>
   );
