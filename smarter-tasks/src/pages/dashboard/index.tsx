@@ -20,6 +20,7 @@ const Dashboard: React.FC = () => {
         </h1>
         <Link to="/signin" id="logout-link">
           <button
+            type="submit"
             id="logout"
             onClick={handleLogout}
             className="mb-5 p-2 pb-3 bg-gray-700 hover:bg-red-400 rounded-2xl text-white font-semibold text-xl"
